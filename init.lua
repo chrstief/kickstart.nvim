@@ -782,20 +782,12 @@ require('lazy').setup({
 
   {
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'datsfilipe/vesper.nvim',
+    'rose-pine/neovim',
     init = function()
-      vim.cmd.colorscheme 'vesper'
+      vim.cmd.colorscheme 'rose-pine'
     end,
-    opts = {
-      transparent = true, -- Boolean: Sets the background to transparent
-      italics = {
-        comments = false, -- Boolean: Italicizes comments
-        keywords = false, -- Boolean: Italicizes keywords
-        functions = false, -- Boolean: Italicizes functions
-        strings = false, -- Boolean: Italicizes strings
-        variables = false, -- Boolean: Italicizes variables
-      },
-    },
+    name = 'rose-pine',
+    opts = { styles = { italic = false, transparency = true } },
   },
 
   -- Highlight todo, notes, etc in comments
