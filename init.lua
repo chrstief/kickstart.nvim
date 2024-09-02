@@ -581,6 +581,7 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
         tsserver = {},
+        tailwindcss = {},
         --
 
         lua_ls = {
@@ -632,6 +633,10 @@ require('lazy').setup({
       require('lspconfig').gleam.setup {}
     end,
   },
+
+  { 'MaximilianLloyd/tw-values.nvim', keys = {
+    { '<leader>sv', '<cmd>TWValues<cr>', desc = 'Show tailwind CSS values' },
+  } },
 
   { -- Autoformat
     'stevearc/conform.nvim',
