@@ -864,5 +864,19 @@ require('lazy').setup({
   },
 })
 
+-- Create an autocommand to format on:
+-- InsertLeave: when leaving Insert mode
+-- TextChanged: after a change was made to the text in Normal mode
+vim.api.nvim_create_autocmd('InsertLeave', {
+  callback = function()
+    require('conform').format()
+  end,
+})
+vim.api.nvim_create_autocmd('TextChanged', {
+  callback = function()
+    require('conform').format()
+  end,
+})
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
