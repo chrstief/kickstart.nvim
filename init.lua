@@ -639,6 +639,13 @@ require('lazy').setup({
     { '<leader>sv', '<cmd>TWValues<cr>', desc = 'Show tailwind CSS values' },
   } },
 
+  { -- Auto close HTML Tags
+    'windwp/nvim-ts-autotag',
+    config = function()
+      require('nvim-ts-autotag').setup()
+    end,
+  },
+
   { -- Autoformat
     'stevearc/conform.nvim',
     lazy = false,
@@ -797,7 +804,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc', 'typescript', 'gleam' },
+      ensure_installed = { 'bash', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc', 'typescript', 'javascript', 'tsx', 'gleam' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
