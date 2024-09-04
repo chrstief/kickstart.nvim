@@ -667,7 +667,7 @@ require('lazy').setup({
         -- languages here or re-enable it for the disabled ones.
         local disable_filetypes = { c = true, cpp = true }
         return {
-          timeout_ms = 500,
+          timeout_ms = 2500,
           lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
         }
       end,
@@ -882,12 +882,12 @@ require('lazy').setup({
 -- TextChanged: after a change was made to the text in Normal mode
 vim.api.nvim_create_autocmd('InsertLeave', {
   callback = function()
-    require('conform').format()
+    require('conform').format { async = true }
   end,
 })
 vim.api.nvim_create_autocmd('TextChanged', {
   callback = function()
-    require('conform').format()
+    require('conform').format { async = true }
   end,
 })
 
