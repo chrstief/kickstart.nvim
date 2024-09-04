@@ -635,10 +635,6 @@ require('lazy').setup({
     end,
   },
 
-  { 'MaximilianLloyd/tw-values.nvim', keys = {
-    { '<leader>sv', '<cmd>TWValues<cr>', desc = 'Show tailwind CSS values' },
-  } },
-
   { -- Auto close HTML Tags
     'windwp/nvim-ts-autotag',
     config = function()
