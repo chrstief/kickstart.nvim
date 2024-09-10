@@ -918,10 +918,8 @@ require('lazy').setup({
   },
 })
 
--- Create an autocommand to format on:
--- InsertLeave: when leaving Insert mode
--- TextChanged: after a change was made to the text in Normal mode
-vim.api.nvim_create_autocmd({ 'InsertLeave', 'TextChanged' }, {
+-- Create an autocommand to format when leaving Insert mode
+vim.api.nvim_create_autocmd('InsertLeave', {
   callback = function()
     require('conform').format { async = true }
   end,
