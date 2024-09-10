@@ -730,6 +730,14 @@ require('lazy').setup({
         css = { 'prettierd' },
       },
     },
+    init = function()
+      -- Create an autocommand to format when leaving Insert mode
+      vim.api.nvim_create_autocmd('InsertLeave', {
+        callback = function()
+          require('conform').format { async = true }
+        end,
+      })
+    end,
   },
 
   { -- Autocompletion
@@ -916,13 +924,6 @@ require('lazy').setup({
       lazy = '💤 ',
     },
   },
-})
-
--- Create an autocommand to format when leaving Insert mode
-vim.api.nvim_create_autocmd('InsertLeave', {
-  callback = function()
-    require('conform').format { async = true }
-  end,
 })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
