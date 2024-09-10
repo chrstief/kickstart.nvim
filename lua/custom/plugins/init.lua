@@ -2,4 +2,9 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
-return {}
+return {
+  { -- Auto close HTML Tags
+    'windwp/nvim-ts-autotag',
+    opts = {},
+  },
+}
