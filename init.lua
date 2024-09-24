@@ -623,6 +623,7 @@ require('lazy').setup({
         ts_ls = {},
         tailwindcss = {},
         eslint = {},
+        jsonls = {},
         --
 
         lua_ls = {
