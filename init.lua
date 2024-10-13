@@ -158,9 +158,9 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 -- Deactivate status bar
-vim.opt.laststatus = 0
-vim.opt.ruler = false
-vim.opt.cmdheight = 0
+-- vim.opt.laststatus = 0
+-- vim.opt.ruler = false
+-- vim.opt.cmdheight = 0
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
