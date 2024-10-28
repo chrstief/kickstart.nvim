@@ -663,7 +663,7 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
-        'prettierd',
+        'prettier',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -710,7 +710,7 @@ require('lazy').setup({
           lsp_format_opt = 'fallback'
         end
         return {
-          timeout_ms = 2500,
+          timeout_ms = 10000,
           lsp_format = lsp_format_opt,
         }
       end,
@@ -721,23 +721,23 @@ require('lazy').setup({
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
-        javascript = { 'prettierd' },
-        typescript = { 'prettierd' },
-        javascriptreact = { 'prettierd' },
-        typescriptreact = { 'prettierd' },
-        html = { 'prettierd' },
-        json = { 'prettierd' },
-        css = { 'prettierd' },
+        javascript = { 'prettierd', 'prettier', stop_after_first = true },
+        typescript = { 'prettierd', 'prettier', stop_after_first = true },
+        javascriptreact = { 'prettierd', 'prettier', stop_after_first = true },
+        typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
+        html = { 'prettierd', 'prettier', stop_after_first = true },
+        json = { 'prettierd', 'prettier', stop_after_first = true },
+        css = { 'prettierd', 'prettier', stop_after_first = true },
       },
     },
-    init = function()
-      -- Create an autocommand to format when leaving Insert mode
-      vim.api.nvim_create_autocmd('InsertLeave', {
-        callback = function()
-          require('conform').format { async = true }
-        end,
-      })
-    end,
+    --   init = function()
+    --     -- Create an autocommand to format when leaving Insert mode
+    --     vim.api.nvim_create_autocmd('InsertLeave', {
+    --       callback = function()
+    --         require('conform').format { async = true }
+    --       end,
+    --     })
+    --   end,
   },
 
   { -- Autocompletion
