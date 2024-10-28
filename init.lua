@@ -170,8 +170,6 @@ highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 ]]
 
-vim.api.nvim_set_hl(0, 'LineNr', { fg = 'white' })
-
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
